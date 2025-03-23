@@ -5,6 +5,19 @@ import axios from 'axios'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
+// fix markers manquants après build Docker
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
+import markerIcon from 'leaflet/dist/images/marker-icon.png'
+import markerShadow from 'leaflet/dist/images/marker-shadow.png'
+
+//chemins casses en prod on vire
+delete (L.Icon.Default.prototype as any)._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow
+})
+
 // Types
 interface Arret {
   nom: string
