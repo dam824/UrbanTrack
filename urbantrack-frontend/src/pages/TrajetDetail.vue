@@ -95,17 +95,14 @@ onMounted(async () => {
       <p class="text-gray-600 mb-4">Durée : {{ trajet.duree }}</p>
 
       <h3 class="text-lg font-semibold text-gray-800 mb-2">Liste des arrêts :</h3>
-      <ul class="space-y-2 mb-6 pb-5">
+      <ul class="space-y-2 mb-6 ">
         <li
           v-for="(arret, index) in trajet.stations"
           :key="index"
-          
         >
           <span class="font-bold">{{ arret.nom }}</span> — {{ arret.horaire }}
         </li>
       </ul>
-
-      <!-- Carte Leaflet -->
       <div id="map" class="w-full h-96 rounded shadow border pt-8"></div>
     </div>
 
