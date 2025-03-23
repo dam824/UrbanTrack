@@ -99,13 +99,10 @@ onMounted(async () => {
         <li
           v-for="(arret, index) in trajet.stations"
           :key="index"
-          
         >
           <span class="font-bold">{{ arret.nom }}</span> — {{ arret.horaire }}
         </li>
       </ul>
-
-      <!-- Carte Leaflet -->
       <div id="map" class="w-full h-96 rounded shadow border pt-8"></div>
     </div>
 
