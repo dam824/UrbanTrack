@@ -18,6 +18,7 @@ router.post('/', async (req,res) => {
         await newTrajet.save();
         res.status(201).json(newTrajet);
     }catch(err){
+        console.error('Erreur POST trajet:', err)
         res.status(500).json({error: err.message})
     }
 });

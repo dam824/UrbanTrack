@@ -95,7 +95,7 @@ onMounted(async () => {
       <p class="text-gray-600 mb-4">Durée : {{ trajet.duree }}</p>
 
       <h3 class="text-lg font-semibold text-gray-800 mb-2">Liste des arrêts :</h3>
-      <ul class="space-y-2 mb-6 ">
+      <ul class="space-y-2 mb-6 pb-5  ">
         <li
           v-for="(arret, index) in trajet.stations"
           :key="index"

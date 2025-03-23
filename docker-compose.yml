@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./urbantrack-backend
+    ports:
+      - '5010:5000'
+    env_file:
+      - .env
+  frontend:
+    build:
+      context: ./urbantrack-frontend
+    ports:
+      - '3000:80'
+    depends_on:
+      - backend
+
+
