@@ -7,7 +7,7 @@ services:
     ports:
       - '5010:5000'
     env_file:
-      - .env
+      - ./urbantrack-backend/.env
   frontend:
     build:
       context: ./urbantrack-frontend
@@ -15,5 +15,7 @@ services:
       - '3000:80'
     depends_on:
       - backend
+    env_file:
+      - ./urbantrack-frontend/.env
 
 
